@@ -26,6 +26,8 @@ namespace RemotingPlayground.Controllers
             {
                 var requestJson = await reader.ReadToEndAsync();
 
+                System.Diagnostics.Debug.WriteLine($"Executing request sized {requestJson.Length}.");
+
                 var expr = ExpressionSerialization.Deserialize(requestJson);
 
                 var del = expr.Compile();

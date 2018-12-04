@@ -38,13 +38,14 @@ namespace RemotingPlayground
         {
             var potentialValue = GetValueOfPotentialConstantMember(node);
 
-            if (potentialValue != null)
+            // "this" means "no result"
+            if (ReferenceEquals(potentialValue, this))
             {
-                return Expression.Constant(potentialValue);
+                return node;
             }
             else
             {
-                return node;
+                return Expression.Constant(potentialValue);
             }
         }
 
@@ -60,6 +61,8 @@ namespace RemotingPlayground
 
                 var nestedValue = GetValueOfPotentialConstantMember(mNode.Expression);
 
+                if (ReferenceEquals(nestedValue, this)) return this;
+
                 if (mNode.Member is PropertyInfo propertyInfo)
                 {
                     return propertyInfo.GetValue(nestedValue);
@@ -73,9 +76,13 @@ namespace RemotingPlayground
                     throw new Exception();
                 }
             }
+            else if (node is ParameterExpression)
+            {
+                return this;
+            }
             else
             {
-                return new Exception("Unexpectedly found a " + node.GetType().Name);
+                throw new Exception("Unexpectedly found a " + node.GetType().Name);
             }
         }
     }
