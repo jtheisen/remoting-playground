@@ -14,6 +14,8 @@ namespace RemotingPlayground
     {
         public static void Main(string[] args)
         {
+            Db.accessor = new ConcreteDbSetAccessor();
+
             CreateWebHostBuilder(args).Build().Run();
         }
 

@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotingPlayground", "RemotingPlayground\RemotingPlayground.csproj", "{36E36264-8AF1-40C7-85E5-230D540ECA4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemotingPlayground", "RemotingPlayground\RemotingPlayground.csproj", "{36E36264-8AF1-40C7-85E5-230D540ECA4C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotingPlayground.Common", "RemotingPlayground.Common\RemotingPlayground.Common.csproj", "{91C22C2A-A607-43A2-BA42-F263B3816A5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotingPlayground.TestClient", "RemotingPlayground.TestClient\RemotingPlayground.TestClient.csproj", "{F04C7DD7-F74F-413E-8087-B1F39FB9C338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotingPlayground.Model", "RemotingPlayground.Model\RemotingPlayground.Model.csproj", "{1EED651C-68C1-4267-924B-54BE7D206647}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F04C7DD7-F74F-413E-8087-B1F39FB9C338}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F04C7DD7-F74F-413E-8087-B1F39FB9C338}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F04C7DD7-F74F-413E-8087-B1F39FB9C338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EED651C-68C1-4267-924B-54BE7D206647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EED651C-68C1-4267-924B-54BE7D206647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EED651C-68C1-4267-924B-54BE7D206647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EED651C-68C1-4267-924B-54BE7D206647}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
