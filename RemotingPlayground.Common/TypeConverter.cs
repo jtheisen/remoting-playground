@@ -8,27 +8,7 @@ using System.Threading.Tasks;
 
 namespace RemotingPlayground
 {
-    public static class ExpressionSerialization
-    {
-        public static String Serialize(LambdaExpression expression)
-        {
-            return JsonConvert.SerializeObject(expression, Formatting.Indented, settings);
-        }
-
-        public static LambdaExpression Deserialize(String json)
-        {
-            return JsonConvert.DeserializeObject<LambdaExpression>(json, settings);
-        }
-
-        static JsonSerializerSettings settings = new JsonSerializerSettings
-        {
-            TypeNameAssemblyFormatHandling = TypeNameAssemblyFormatHandling.Simple,
-            TypeNameHandling = TypeNameHandling.All,
-            Converters = new JsonConverter[] { new TypeConverter(), new Aq.ExpressionJsonSerializer.ExpressionJsonConverter(Assembly.GetExecutingAssembly()) }
-        };
-    }
-
-    class TypeConverter : Newtonsoft.Json.JsonConverter
+    class TypeConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
