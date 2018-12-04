@@ -32,6 +32,13 @@ namespace RemotingPlayground.Controllers
 
                 var result = del.DynamicInvoke();
 
+                if (result is Task taskResult)
+                {
+                    await taskResult;
+
+                    result = result.GetType().GetProperty("Result").GetValue(result);
+                }
+
                 return JsonConvert.SerializeObject(result);
             }
         }

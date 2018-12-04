@@ -18,9 +18,9 @@ namespace RemotingPlayground.TestClient
         async Task Test()
         {
             var client = new Client("https://localhost:44396/execute");
-            //var client = new Client("http://app.nowhere.com/execute");
 
             Console.WriteLine(await client.ExecuteAsync(() => DateTimeOffset.Now));
+            Console.WriteLine(await client.ExecuteAsync(() => Task.Delay(1000).ContinueWith(c => DateTimeOffset.Now)));
         }
     }
 }

@@ -18,7 +18,11 @@ namespace RemotingPlayground.TestClient
             this.url = url;
         }
 
-        public async Task<T> ExecuteAsync<T>(Expression<Func<T>> expr)
+        public Task<T> ExecuteAsync<T>(Expression<Func<T>> expr) => ExecuteImplAsync<T>(expr);
+
+        public Task<T> ExecuteAsync<T>(Expression<Func<Task<T>>> expr) => ExecuteImplAsync<T>(expr);
+
+        async Task<T> ExecuteImplAsync<T>(LambdaExpression expr)
         {
             var requestJson = ExpressionSerialization.Serialize(expr);
 

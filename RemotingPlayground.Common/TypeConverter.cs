@@ -10,9 +10,9 @@ namespace RemotingPlayground
 {
     public static class ExpressionSerialization
     {
-        public static String Serialize<T>(Expression<Func<T>> expression)
+        public static String Serialize(LambdaExpression expression)
         {
-            return JsonConvert.SerializeObject(expression, Newtonsoft.Json.Formatting.Indented, settings);
+            return JsonConvert.SerializeObject(expression, Formatting.Indented, settings);
         }
 
         public static LambdaExpression Deserialize(String json)
