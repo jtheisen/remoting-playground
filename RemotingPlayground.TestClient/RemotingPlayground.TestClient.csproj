@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aq.ExpressionJsonSerializer" Version="0.18.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aq.ExpressionJsonSerializer\Aq.ExpressionJsonSerializer.csproj" />
     <ProjectReference Include="..\RemotingPlayground.Common\RemotingPlayground.Common.csproj" />
     <ProjectReference Include="..\RemotingPlayground.Model\RemotingPlayground.Model.csproj" />
   </ItemGroup>

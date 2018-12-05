@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aq.ExpressionJsonSerializer" Version="0.18.0" />
     <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.3" />
@@ -17,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aq.ExpressionJsonSerializer\Aq.ExpressionJsonSerializer.csproj" />
     <ProjectReference Include="..\RemotingPlayground.Common\RemotingPlayground.Common.csproj" />
     <ProjectReference Include="..\RemotingPlayground.Model\RemotingPlayground.Model.csproj" />
   </ItemGroup>

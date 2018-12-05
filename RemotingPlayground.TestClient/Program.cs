@@ -22,7 +22,7 @@ namespace RemotingPlayground.TestClient
             var delay = 100;
 
             Console.WriteLine(await client.ExecuteAsync(() => delay));
-            //Console.WriteLine(await client.ExecuteAsync(() => Db.Set<Company>().FirstOrDefault()).ContinueWith(t => t.Result.Name));
+            Console.WriteLine(await client.ExecuteAsync(() => Db.Set<Company>().FirstOrDefault()).ContinueWith(t => t.Result.Name));
             Console.WriteLine(await client.ExecuteAsync(() => Task.Delay(delay).ContinueWith(c => DateTimeOffset.Now)));
         }
     }
